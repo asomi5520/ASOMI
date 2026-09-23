@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#080b14"
+    >
+
+    <title>Asomi Enterprise | Admin Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background">
+
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+
+        <div class="grid"></div>
+
+    </div>
+
+
+    <!-- Main Login Area -->
+    <main class="login-container">
+
+        <section class="login-card">
+
+
+            <!-- Top Brand -->
+            <div class="brand">
+
+                <div class="brand-logo">
+                    AE
+                </div>
+
+                <div class="brand-name">
+
+                    <h2>
+                        Asomi Enterprise
+                    </h2>
+
+                    <span>
+                        ADMIN CONTROL CENTER
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+
+            <!-- Heading -->
+            <div class="heading">
+
+                <div class="welcome-badge">
+                    <span class="status-dot"></span>
+                    Secure Administrator Access
+                </div>
+
+                <h1>
+                    Welcome Back
+                </h1>
+
+                <p>
+                    Sign in to manage your website,
+                    photos and content.
+                </p>
+
+            </div>
+
+
+            <!-- Login Form -->
+            <form id="loginForm">
+
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Admin Email
+                    </label>
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            >
+                                <path
+                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                />
+
+                                <polyline
+                                    points="22,6 12,13 2,6"
+                                />
+                            </svg>
+                        </span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter admin email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    <div class="password-label">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                    </div>
+
+
+                    <div class="input-box">
+
+                        <span class="input-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            >
+                                <rect
+                                    x="3"
+                                    y="11"
+                                    width="18"
+                                    height="11"
+                                    rx="2"
+                                />
+
+                                <path
+                                    d="M7 11V7a5 5 0 0 1 10 0v4"
+                                />
+                            </svg>
+
+                        </span>
+
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-password"
+                            aria-label="Show password"
+                        >
+
+                            <svg
+                                id="eyeIcon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                            >
+
+                                <path
+                                    d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
+                                />
+
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="3"
+                                />
+
+                            </svg>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Error / Success -->
+                <div
+                    id="message"
+                    class="message"
+                ></div>
+
+
+                <!-- Login Button -->
+                <button
+                    type="submit"
+                    id="loginBtn"
+                    class="login-button"
+                >
+
+                    <span id="loginText">
+                        Sign In to Dashboard
+                    </span>
+
+                    <span
+                        id="loader"
+                        class="loader"
+                    ></span>
+
+                    <svg
+                        id="arrowIcon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <line
+                            x1="5"
+                            y1="12"
+                            x2="19"
+                            y2="12"
+                        />
+
+                        <polyline
+                            points="12 5 19 12 12 19"
+                        />
+
+                    </svg>
+
+                </button>
+
+
+            </form>
+
+
+            <!-- Security -->
+            <div class="security">
+
+                <div class="security-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                    >
+
+                        <path
+                            d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                        />
+
+                        <polyline
+                            points="9 12 11 14 15 10"
+                        />
+
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Secure Login
+                    </strong>
+
+                    <span>
+                        Protected by Supabase Authentication
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer -->
+            <footer>
+
+                <span>
+                    © 2026 Asomi Enterprise
+                </span>
+
+                <span class="footer-dot">
+                    •
+                </span>
+
+                <span>
+                    Admin Portal
+                </span>
+
+            </footer>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- Supabase -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+
+    <!-- Config -->
+    <script src="config.js"></script>
+
+
+    <!-- Login -->
+    <script src="login.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asomienterprise.github.io/Asomi-Enterprise/sitemap.xml

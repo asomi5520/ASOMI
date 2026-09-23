@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Asomi Enterprise | Admin Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Supabase Configuration -->
+    <script src="config.js"></script>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         LOADING SCREEN
+    ========================================== -->
+
+    <div
+        class="loading-screen"
+        id="loadingScreen"
+    >
+
+        <div class="loader"></div>
+
+        <p>
+            Checking authentication...
+        </p>
+
+    </div>
+
+
+
+    <!-- =========================================
+         ADMIN DASHBOARD
+    ========================================== -->
+
+    <div
+        class="dashboard"
+        id="dashboard"
+    >
+
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="sidebar">
+
+
+            <div class="brand">
+
+                <div class="brand-logo">
+                    AE
+                </div>
+
+                <div>
+
+                    <h2>
+                        ASOMI
+                    </h2>
+
+                    <span>
+                        ENTERPRISE
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <nav class="sidebar-nav">
+
+
+                <a
+                    href="#dashboard-section"
+                    class="nav-item active"
+                >
+
+                    <span>▣</span>
+
+                    Dashboard
+
+                </a>
+
+
+
+                <a
+                    href="#photos-section"
+                    class="nav-item"
+                >
+
+                    <span>▧</span>
+
+                    Photos
+
+                </a>
+
+
+
+                <a
+                    href="index.html"
+                    class="nav-item"
+                >
+
+                    <span>↗</span>
+
+                    View Website
+
+                </a>
+
+
+            </nav>
+
+
+
+            <!-- LOGOUT -->
+
+            <button
+                type="button"
+                class="logout-btn"
+                id="logoutBtn"
+            >
+
+                <span>↪</span>
+
+                Logout
+
+            </button>
+
+
+        </aside>
+
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================
+                 TOP BAR
+            ================================== -->
+
+            <header class="topbar">
+
+
+                <div>
+
+                    <p class="small-title">
+                        ADMIN PANEL
+                    </p>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                </div>
+
+
+
+                <div class="admin-user">
+
+
+                    <div class="user-avatar">
+                        A
+                    </div>
+
+
+                    <div class="user-info">
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <span id="adminEmail">
+                            Loading...
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================
+                 DASHBOARD SECTION
+            ================================== -->
+
+            <section id="dashboard-section">
+
+
+                <!-- WELCOME CARD -->
+
+                <div class="welcome-card">
+
+
+                    <div>
+
+                        <span class="welcome-label">
+                            ASOMI ENTERPRISE
+                        </span>
+
+                        <h2>
+                            Welcome to your Admin Dashboard
+                        </h2>
+
+                        <p>
+                            Manage your website photos and content from one place.
+                        </p>
+
+                    </div>
+
+
+                    <div class="welcome-icon">
+                        ✦
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- STATS -->
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ▧
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total Photos
+                            </span>
+
+                            <strong id="totalPhotos">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ☁
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Storage
+                            </span>
+
+                            <strong>
+                                Supabase
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Account
+                            </span>
+
+                            <strong>
+                                Active
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================
+                 PHOTOS SECTION
+            ================================== -->
+
+            <section
+                class="photos-section"
+                id="photos-section"
+            >
+
+
+                <!-- SECTION HEADING -->
+
+                <div class="section-heading">
+
+
+                    <div>
+
+                        <p class="small-title">
+                            MEDIA MANAGEMENT
+                        </p>
+
+                        <h2>
+                            Website Photos
+                        </h2>
+
+                    </div>
+
+
+
+                    <button
+                        type="button"
+                        class="upload-button"
+                        id="uploadButton"
+                    >
+                        + Upload Photo
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     UPLOAD BOX
+                ================================== -->
+
+                <div
+                    class="upload-box"
+                    id="uploadBox"
+                >
+
+
+                    <div class="upload-icon">
+                        ↑
+                    </div>
+
+
+                    <h3>
+                        Upload Website Photo
+                    </h3>
+
+
+                    <p>
+                        Select an image from your computer
+                    </p>
+
+
+
+                    <!-- =================================
+                         CATEGORY SELECT
+                    ================================== -->
+
+                    <select
+                        id="photoCategory"
+                        class="photo-category"
+                    >
+
+                        <option value="">
+                            Select Service Category
+                        </option>
+
+                        <option value="Digital Printing">
+                            Digital Printing
+                        </option>
+
+                        <option value="Flex & Banner Printing">
+                            Flex & Banner Printing
+                        </option>
+
+                        <option value="Visiting Cards">
+                            Visiting Cards
+                        </option>
+
+                        <option value="Pamphlets & Flyers">
+                            Pamphlets & Flyers
+                        </option>
+
+                        <option value="Brochures">
+                            Brochures
+                        </option>
+
+                        <option value="Letterheads">
+                            Letterheads
+                        </option>
+
+                        <option value="Bill Books">
+                            Bill Books
+                        </option>
+
+                        <option value="ID Cards">
+                            ID Cards
+                        </option>
+
+                        <option value="Certificates">
+                            Certificates
+                        </option>
+
+                        <option value="Stickers & Labels">
+                            Stickers & Labels
+                        </option>
+
+                        <option value="Photo Printing">
+                            Photo Printing
+                        </option>
+
+                        <option value="Custom Printing Services">
+                            Custom Printing Services
+                        </option>
+
+                        <option value="Book Printing">
+                            Book Printing
+                        </option>
+
+                    </select>
+
+
+
+                    <!-- =================================
+                         HIDDEN FILE INPUT
+                    ================================== -->
+
+                    <input
+                        type="file"
+                        id="photoInput"
+                        accept="image/*"
+                        hidden
+                    >
+
+
+
+                    <!-- =================================
+                         SELECT PHOTO
+                    ================================== -->
+
+                    <button
+                        type="button"
+                        class="select-button"
+                        id="selectButton"
+                    >
+                        Select Photo
+                    </button>
+
+
+
+                    <!-- SELECTED FILE NAME -->
+
+                    <div
+                        class="selected-file"
+                        id="selectedFile"
+                    ></div>
+
+
+
+                    <!-- =================================
+                         UPLOAD PHOTO
+                    ================================== -->
+
+                    <button
+                        type="button"
+                        class="confirm-upload"
+                        id="confirmUpload"
+                        style="display: none;"
+                    >
+                        Upload to Website
+                    </button>
+
+
+
+                    <!-- UPLOAD STATUS -->
+
+                    <div
+                        class="upload-status"
+                        id="uploadStatus"
+                    ></div>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     PHOTO HEADER
+                ================================== -->
+
+                <div class="photo-header">
+
+
+                    <h3>
+                        Uploaded Photos
+                    </h3>
+
+
+
+                    <button
+                        type="button"
+                        class="refresh-button"
+                        id="refreshButton"
+                    >
+                        ↻ Refresh
+                    </button>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     PHOTO GRID
+                ================================== -->
+
+                <div
+                    class="photo-grid"
+                    id="photoGrid"
+                >
+
+
+                    <div class="empty-state">
+
+                        <div>
+                            ▧
+                        </div>
+
+                        <p>
+                            No photos uploaded yet.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         ADMIN JAVASCRIPT
+    ========================================== -->
+
+    <script src="admin.js"></script>
+
+
+</body>
+
+</html>
