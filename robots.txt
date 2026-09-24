@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://asomienterprise.github.io/Asomi-Enterprise/sitemap.xml
+Sitemap: https://asomi5520.github.io/ASOMI/sitemap.xml
