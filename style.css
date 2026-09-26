@@ -1,7 +1,6 @@
 /* =========================================================
    ASOMI ENTERPRISE
    PREMIUM PRINTING WEBSITE
-   CLEAN VERSION — NO MOUSE ANIMATION
 ========================================================= */
 
 :root {
@@ -47,9 +46,6 @@ body {
     font-family: var(--font-main);
     line-height: 1.6;
     overflow-x: hidden;
-
-    /* NORMAL MOUSE POINTER */
-    cursor: auto;
 }
 
 body.modal-open {
@@ -63,7 +59,6 @@ a {
 
 button {
     font-family: inherit;
-    cursor: pointer;
 }
 
 img {
@@ -115,26 +110,25 @@ img {
 }
 
 
-/* =========================================================
-   LOGO
-========================================================= */
+/* LOGO */
+
+/* =========================
+   HEADER LOGO
+========================= */
 
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-
     text-decoration: none;
-
     flex-shrink: 0;
     min-width: max-content;
 }
 
 .logo-mark {
-    width: 52px;
-    height: 52px;
-
-    flex: 0 0 52px;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
 
     display: flex;
     align-items: center;
@@ -142,14 +136,13 @@ img {
 
     background: transparent;
     border: none;
-
+    border-radius: 0;
     overflow: hidden;
 }
 
 .logo-mark img {
-    width: 52px;
-    height: 52px;
-
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     display: block;
 }
@@ -166,26 +159,20 @@ img {
 
 .logo-text strong {
     display: block;
-
     font-size: 18px;
     line-height: 1.1;
+    letter-spacing: 0;
 }
 
 .logo-text small {
     display: block;
-
     margin-top: 5px;
-
     font-size: 9px;
     letter-spacing: 2px;
-
     line-height: 1;
 }
 
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* NAV */
 
 .nav {
     display: flex;
@@ -233,9 +220,7 @@ img {
 }
 
 
-/* =========================================================
-   NAV BUTTON
-========================================================= */
+/* NAV BUTTON */
 
 .nav-button {
     padding: 12px 19px;
@@ -258,25 +243,8 @@ img {
     color: white;
 }
 
-.admin-login-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-}
 
-.admin-login-link i {
-    font-size: 0.78rem;
-    transition: transform 0.3s ease;
-}
-
-.admin-login-link:hover i {
-    transform: rotate(-8deg) scale(1.1);
-}
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+/* MENU */
 
 .menu-button {
     display: none;
@@ -290,136 +258,6 @@ img {
     background: transparent;
 
     cursor: pointer;
-}
-
-
-/* =========================================================
-   PREMIUM SPACE BACKGROUND
-   NO MOUSE FOLLOW
-========================================================= */
-
-.space-background {
-    position: fixed;
-    inset: 0;
-
-    z-index: 0;
-
-    pointer-events: none;
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(178, 138, 69, 0.08),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 85% 75%,
-            rgba(216, 187, 130, 0.07),
-            transparent 28%
-        ),
-        linear-gradient(
-            135deg,
-            #ffffff 0%,
-            #faf8f3 50%,
-            #ffffff 100%
-        );
-
-    animation:
-        premiumBackgroundScale
-        20s
-        ease-in-out
-        infinite
-        alternate;
-}
-
-
-@keyframes premiumBackgroundScale {
-
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.025);
-    }
-
-    100% {
-        transform: scale(1.055);
-    }
-}
-
-
-/* =========================================================
-   SPACE PARTICLES
-========================================================= */
-
-.space-particles {
-    position: absolute;
-    inset: 0;
-}
-
-.space-particle {
-    position: absolute;
-
-    width: 3px;
-    height: 3px;
-
-    border-radius: 50%;
-
-    background: rgba(178, 138, 69, 0.35);
-
-    box-shadow:
-        0 0 8px rgba(178, 138, 69, 0.25);
-
-    animation:
-        particleFloat
-        var(--particle-duration)
-        ease-in-out
-        infinite
-        alternate;
-
-    opacity: var(--particle-opacity);
-}
-
-
-@keyframes particleFloat {
-
-    0% {
-        transform:
-            translate3d(0, 0, 0)
-            scale(0.7);
-
-        opacity: 0.15;
-    }
-
-    50% {
-        opacity: var(--particle-opacity);
-    }
-
-    100% {
-        transform:
-            translate3d(
-                var(--particle-x),
-                var(--particle-y),
-                0
-            )
-            scale(1.3);
-
-        opacity: 0.05;
-    }
-}
-
-
-/* =========================================================
-   KEEP CONTENT ABOVE BACKGROUND
-========================================================= */
-
-header,
-main,
-footer {
-    position: relative;
-    z-index: 1;
 }
 
 
@@ -481,9 +319,7 @@ footer {
 }
 
 
-/* =========================================================
-   HERO TEXT
-========================================================= */
+/* EYEBROW */
 
 .eyebrow {
     display: flex;
@@ -506,6 +342,9 @@ footer {
 
     background: var(--gold);
 }
+
+
+/* HERO TEXT */
 
 .hero h1 {
     max-width: 720px;
@@ -541,9 +380,7 @@ footer {
 }
 
 
-/* =========================================================
-   BUTTONS
-========================================================= */
+/* BUTTONS */
 
 .hero-buttons,
 .cta-buttons {
@@ -560,7 +397,6 @@ footer {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     gap: 10px;
 
     border-radius: 100px;
@@ -578,20 +414,16 @@ footer {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-
-    box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.16);
 }
 
 .btn-outline {
     border: 1px solid var(--border);
-
     background: rgba(255,255,255,0.5);
 }
 
 .btn-outline:hover {
     background: white;
-
     border-color: var(--gold);
 }
 
@@ -606,9 +438,7 @@ footer {
 }
 
 
-/* =========================================================
-   HERO INFO
-========================================================= */
+/* HERO INFO */
 
 .hero-info {
     display: flex;
@@ -620,15 +450,12 @@ footer {
 
 .hero-info-item {
     display: flex;
-
     gap: 12px;
-
     align-items: center;
 }
 
 .hero-info-item > i {
     color: var(--gold-dark);
-
     font-size: 16px;
 }
 
@@ -643,15 +470,11 @@ footer {
 
 .hero-info-item span {
     color: var(--text-light);
-
     font-size: 11px;
 }
 
 
-/* =========================================================
-   HERO VISUAL
-   NO MOUSE TILT
-========================================================= */
+/* HERO VISUAL */
 
 .hero-visual {
     position: relative;
@@ -659,16 +482,8 @@ footer {
     min-height: 580px;
 
     display: grid;
-
     place-items: center;
-
-    overflow: visible;
 }
-
-
-/* =========================================================
-   HERO CARD
-========================================================= */
 
 .hero-card {
     width: min(410px, 80%);
@@ -680,9 +495,7 @@ footer {
     position: relative;
 
     display: flex;
-
     flex-direction: column;
-
     justify-content: space-between;
 
     background:
@@ -702,14 +515,11 @@ footer {
 
     transform: rotate(5deg);
 
-    transition:
-        transform 0.5s ease;
+    transition: 0.5s ease;
 }
 
 .hero-card:hover {
-    transform:
-        rotate(1deg)
-        translateY(-8px);
+    transform: rotate(1deg) translateY(-8px);
 }
 
 .hero-card::before {
@@ -719,76 +529,16 @@ footer {
 
     inset: 12px;
 
-    border:
-        1px solid
-        rgba(216,187,130,0.35);
+    border: 1px solid rgba(216,187,130,0.35);
 
     border-radius: 17px;
 
     pointer-events: none;
 }
 
-
-/* =========================================================
-   HERO CARD GOLD BORDER ANIMATION
-========================================================= */
-
-.hero-card::after {
-    content: "";
-
-    position: absolute;
-
-    inset: -3px;
-
-    border-radius: 28px;
-
-    background:
-        linear-gradient(
-            120deg,
-            transparent 20%,
-            rgba(216,187,130,.75),
-            transparent 80%
-        );
-
-    background-size: 250% 250%;
-
-    animation:
-        goldBorderMove
-        5s
-        linear
-        infinite;
-
-    z-index: -1;
-
-    opacity: .65;
-
-    pointer-events: none;
-}
-
-@keyframes goldBorderMove {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-
-/* =========================================================
-   HERO CARD CONTENT
-========================================================= */
-
 .card-top,
 .card-bottom {
     display: flex;
-
     justify-content: space-between;
 
     font-size: 9px;
@@ -800,9 +550,7 @@ footer {
     color: var(--gold-light);
 
     display: flex;
-
     gap: 6px;
-
     align-items: center;
 }
 
@@ -815,9 +563,29 @@ footer {
     border-radius: 50%;
 }
 
+.hero-card-logo {
+    width: 110px;
+    height: 110px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(216,187,130,0.45);
+
+    border-radius: 50%;
+
+    margin: auto;
+}
+
+.hero-card-logo span {
+    font-family: var(--font-display);
+    font-size: 45px;
+
+    color: var(--gold-light);
+}
+
 .hero-card-title small {
     font-size: 8px;
-
     letter-spacing: 3px;
 
     color: #aaa;
@@ -836,188 +604,7 @@ footer {
 }
 
 
-/* =========================================================
-   HERO CARD LOGO
-========================================================= */
-
-.hero-card-logo {
-    position: relative;
-
-    width: 125px;
-    height: 125px;
-
-    display: grid;
-
-    place-items: center;
-
-    margin: auto;
-
-    border-radius: 50%;
-
-    background: #fff;
-
-    border:
-        5px solid
-        var(--gold-light);
-
-    box-shadow:
-        0 0 0 1px rgba(255,255,255,.6),
-        0 0 25px rgba(216,187,130,.55),
-        0 0 60px rgba(178,138,69,.22);
-
-    animation:
-        logoFloat
-        4s
-        ease-in-out
-        infinite;
-
-    overflow: visible;
-}
-
-.hero-card-logo img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    padding: 3px;
-
-    border-radius: 50%;
-}
-
-@keyframes logoFloat {
-
-    0%,
-    100% {
-        transform:
-            translateY(0)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translateY(-6px)
-            scale(1.025);
-    }
-}
-
-
-.hero-card-logo::before,
-.hero-card-logo::after {
-    content: "";
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    pointer-events: none;
-}
-
-.hero-card-logo::before {
-    width: 145px;
-    height: 145px;
-
-    border:
-        1px solid
-        rgba(216,187,130,.75);
-
-    border-left-color: transparent;
-
-    animation:
-        logoRingSpin
-        7s
-        linear
-        infinite;
-}
-
-.hero-card-logo::after {
-    width: 160px;
-    height: 160px;
-
-    border:
-        1px dashed
-        rgba(216,187,130,.30);
-
-    animation:
-        logoRingReverse
-        11s
-        linear
-        infinite;
-}
-
-@keyframes logoRingSpin {
-
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes logoRingReverse {
-
-    from {
-        transform: rotate(360deg);
-    }
-
-    to {
-        transform: rotate(0deg);
-    }
-}
-
-
-/* =========================================================
-   HERO CARD LIGHT SWEEP
-========================================================= */
-
-.hero-card .card-top::after {
-    content: "";
-
-    position: absolute;
-
-    width: 180px;
-    height: 180px;
-
-    top: -100px;
-    left: -220px;
-
-    background:
-        linear-gradient(
-            120deg,
-            transparent,
-            rgba(255,255,255,.16),
-            transparent
-        );
-
-    transform: rotate(25deg);
-
-    animation:
-        cardLightSweep
-        6s
-        ease-in-out
-        infinite;
-
-    pointer-events: none;
-}
-
-@keyframes cardLightSweep {
-
-    0% {
-        left: -220px;
-    }
-
-    55%,
-    100% {
-        left: 450px;
-    }
-}
-
-
-/* =========================================================
-   FLOATING CARDS
-========================================================= */
+/* FLOATING CARDS */
 
 .floating-card {
     position: absolute;
@@ -1025,66 +612,18 @@ footer {
     padding: 16px;
 
     display: flex;
-
     gap: 12px;
-
     align-items: center;
 
-    background:
-        rgba(255,255,255,0.88);
+    background: rgba(255,255,255,0.88);
 
     backdrop-filter: blur(20px);
 
-    border:
-        1px solid
-        rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.7);
 
     border-radius: 16px;
 
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.12);
-
-    z-index: 20;
-
-    animation:
-        floatingChip
-        5s
-        ease-in-out
-        infinite;
-}
-
-.floating-one {
-    left: 0;
-    bottom: 130px;
-
-    animation-delay: -1s;
-}
-
-.floating-two {
-    right: -10px;
-    top: 120px;
-
-    animation-delay: -3s;
-}
-
-@keyframes floatingChip {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-.floating-card:hover {
-    animation-play-state: paused;
-
-    transform:
-        translateY(-14px)
-        scale(1.04);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
 }
 
 .floating-card > i {
@@ -1092,7 +631,6 @@ footer {
     height: 38px;
 
     display: grid;
-
     place-items: center;
 
     background: var(--bg-soft);
@@ -1113,8 +651,17 @@ footer {
 
 .floating-card span {
     font-size: 9px;
-
     color: var(--text-light);
+}
+
+.floating-one {
+    left: 0;
+    bottom: 130px;
+}
+
+.floating-two {
+    right: -10px;
+    top: 120px;
 }
 
 
@@ -1140,7 +687,6 @@ footer {
 
 .section-heading.centered {
     display: block;
-
     text-align: center;
 
     max-width: 720px;
@@ -1155,7 +701,6 @@ footer {
     color: var(--gold-dark);
 
     font-size: 10px;
-
     font-weight: 800;
 
     letter-spacing: 2.5px;
@@ -1232,21 +777,16 @@ footer {
     height: 130px;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
 
     background: var(--text);
-
     color: white;
 
     border-radius: 50%;
 
-    box-shadow:
-        0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
 .image-badge strong {
@@ -1305,13 +845,10 @@ footer {
 
 .about-points div {
     display: flex;
-
     gap: 9px;
-
     align-items: center;
 
     font-size: 12px;
-
     font-weight: 700;
 }
 
@@ -1331,8 +868,7 @@ footer {
 .services-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 18px;
 }
@@ -1344,9 +880,7 @@ footer {
 
     background: white;
 
-    border:
-        1px solid
-        var(--border);
+    border: 1px solid var(--border);
 
     border-radius: var(--radius);
 
@@ -1360,12 +894,6 @@ footer {
         transform 0.35s ease,
         box-shadow 0.35s ease,
         border-color 0.35s ease;
-
-    animation:
-        serviceCardFloat
-        5s
-        ease-in-out
-        infinite;
 }
 
 .service-card::before {
@@ -1389,94 +917,16 @@ footer {
 }
 
 .service-card:hover {
-    animation-play-state: paused;
+    transform: translateY(-7px);
 
-    transform:
-        translateY(-12px)
-        scale(1.02);
-
-    border-color:
-        rgba(178,138,69,0.3);
+    border-color: rgba(178,138,69,0.3);
 
     box-shadow: var(--shadow);
-
-    z-index: 5;
 }
 
 .service-card:hover::before {
     transform: scale(2);
 }
-
-@keyframes serviceCardFloat {
-
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-6px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-
-/* SERVICE CARD DELAYS */
-
-.service-card:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.service-card:nth-child(2) {
-    animation-delay: .35s;
-}
-
-.service-card:nth-child(3) {
-    animation-delay: .7s;
-}
-
-.service-card:nth-child(4) {
-    animation-delay: 1.05s;
-}
-
-.service-card:nth-child(5) {
-    animation-delay: 1.4s;
-}
-
-.service-card:nth-child(6) {
-    animation-delay: 1.75s;
-}
-
-.service-card:nth-child(7) {
-    animation-delay: 2.1s;
-}
-
-.service-card:nth-child(8) {
-    animation-delay: 2.45s;
-}
-
-.service-card:nth-child(9) {
-    animation-delay: 2.8s;
-}
-
-.service-card:nth-child(10) {
-    animation-delay: 3.15s;
-}
-
-.service-card:nth-child(11) {
-    animation-delay: 3.5s;
-}
-
-.service-card:nth-child(12) {
-    animation-delay: 3.85s;
-}
-
-.service-card:nth-child(13) {
-    animation-delay: 4.2s;
-}
-
 
 .service-number {
     position: absolute;
@@ -1496,7 +946,6 @@ footer {
     height: 55px;
 
     display: grid;
-
     place-items: center;
 
     background: var(--bg-soft);
@@ -1514,7 +963,6 @@ footer {
 
 .service-card:hover .service-icon {
     background: var(--text);
-
     color: var(--gold-light);
 }
 
@@ -1543,15 +991,12 @@ footer {
     bottom: 27px;
 
     display: flex;
-
     gap: 8px;
-
     align-items: center;
 
     color: var(--gold-dark);
 
     font-size: 10px;
-
     font-weight: 800;
 
     letter-spacing: 1px;
@@ -1574,7 +1019,6 @@ footer {
 
 .why-us {
     background: #171717;
-
     color: white;
 }
 
@@ -1619,25 +1063,20 @@ footer {
 .why-card {
     padding: 28px;
 
-    border:
-        1px solid
-        rgba(255,255,255,0.09);
+    border: 1px solid rgba(255,255,255,0.09);
 
     border-radius: 18px;
 
-    background:
-        rgba(255,255,255,0.025);
+    background: rgba(255,255,255,0.025);
 
     display: flex;
-
     gap: 18px;
 
     transition: 0.3s;
 }
 
 .why-card:hover {
-    background:
-        rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.06);
 
     transform: translateY(-4px);
 }
@@ -1647,14 +1086,11 @@ footer {
     height: 45px;
 
     display: grid;
-
     place-items: center;
 
     color: var(--gold-light);
 
-    border:
-        1px solid
-        rgba(216,187,130,0.25);
+    border: 1px solid rgba(216,187,130,0.25);
 
     border-radius: 12px;
 }
@@ -1682,7 +1118,6 @@ footer {
 
 .cta {
     padding: 50px 0;
-
     background: #171717;
 }
 
@@ -1696,9 +1131,7 @@ footer {
             #171717
         );
 
-    border:
-        1px solid
-        rgba(216,187,130,0.18);
+    border: 1px solid rgba(216,187,130,0.18);
 
     border-radius: 28px;
 
@@ -1739,8 +1172,7 @@ footer {
 .contact-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 18px;
 }
@@ -1749,12 +1181,9 @@ footer {
     padding: 30px;
 
     display: flex;
-
     gap: 18px;
 
-    border:
-        1px solid
-        var(--border);
+    border: 1px solid var(--border);
 
     border-radius: 20px;
 
@@ -1772,7 +1201,6 @@ footer {
     height: 48px;
 
     display: grid;
-
     place-items: center;
 
     background: var(--bg-soft);
@@ -1812,7 +1240,6 @@ footer {
     display: inline-flex;
 
     gap: 7px;
-
     align-items: center;
 
     color: var(--gold-dark);
@@ -1844,16 +1271,13 @@ footer {
 .footer-top {
     display: grid;
 
-    grid-template-columns:
-        1.4fr 0.7fr 0.9fr 1fr;
+    grid-template-columns: 1.4fr 0.7fr 0.9fr 1fr;
 
     gap: 60px;
 
     padding-bottom: 55px;
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .footer-brand p {
@@ -1875,9 +1299,7 @@ footer {
 .footer-links,
 .footer-contact {
     display: flex;
-
     flex-direction: column;
-
     gap: 12px;
 }
 
@@ -1931,13 +1353,11 @@ footer {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 25px;
 
     visibility: hidden;
-
     opacity: 0;
 
     transition: 0.35s ease;
@@ -1945,7 +1365,6 @@ footer {
 
 .gallery-modal.active {
     visibility: visible;
-
     opacity: 1;
 }
 
@@ -1954,8 +1373,7 @@ footer {
 
     inset: 0;
 
-    background:
-        rgba(8,8,8,0.78);
+    background: rgba(8,8,8,0.78);
 
     backdrop-filter: blur(15px);
 }
@@ -1975,41 +1393,15 @@ footer {
 
     padding: 30px;
 
-    transform:
-        translateY(30px)
-        scale(0.97);
+    transform: translateY(30px) scale(0.97);
 
     transition: 0.4s ease;
 
-    box-shadow:
-        0 40px 100px
-        rgba(0,0,0,0.35);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.35);
 }
 
 .gallery-modal.active .gallery-window {
-    animation:
-        galleryWindowOpen
-        0.5s
-        cubic-bezier(.2,.8,.2,1);
-}
-
-@keyframes galleryWindowOpen {
-
-    0% {
-        opacity: 0;
-
-        transform:
-            translateY(30px)
-            scale(0.94);
-    }
-
-    100% {
-        opacity: 1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
+    transform: translateY(0) scale(1);
 }
 
 .gallery-close {
@@ -2022,12 +1414,9 @@ footer {
     height: 42px;
 
     display: grid;
-
     place-items: center;
 
-    border:
-        1px solid
-        var(--border);
+    border: 1px solid var(--border);
 
     border-radius: 50%;
 
@@ -2042,7 +1431,6 @@ footer {
 
 .gallery-close:hover {
     background: var(--text);
-
     color: white;
 }
 
@@ -2074,43 +1462,30 @@ footer {
     letter-spacing: 1px;
 }
 
-
-/* =========================================================
-   GALLERY MAIN
-========================================================= */
-
 .gallery-main {
     width: 100%;
-
     height: 400px;
-
     padding: 12px;
+    box-sizing: border-box;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     overflow: hidden;
 
-    background: #f1f1f3;
-
+    background: #f3f3f5;
     border-radius: 18px;
 }
 
 .gallery-main img {
     width: 100%;
-
     height: 100%;
 
     object-fit: contain !important;
-
     object-position: center;
 
-    display: block;
-
-    border-radius: 18px;
+    border-radius: 12px;
 }
 
 .gallery-image-wrap {
@@ -2127,167 +1502,12 @@ footer {
 
 .gallery-image {
     width: 100%;
-
     height: 400px;
-
     object-fit: contain !important;
-
     object-position: center center;
-
     display: block;
-
     border-radius: 18px;
-
-    opacity: 1;
-
-    transform:
-        scale(1)
-        translateX(0);
-
-    transition:
-        opacity 0.35s ease,
-        transform 0.55s cubic-bezier(.2,.8,.2,1);
 }
-
-.gallery-image.gallery-enter {
-    animation:
-        galleryImageEnter
-        0.6s
-        cubic-bezier(.2,.8,.2,1);
-}
-
-@keyframes galleryImageEnter {
-
-    0% {
-        opacity: 0;
-
-        transform:
-            scale(1.08)
-            translateX(25px);
-    }
-
-    100% {
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translateX(0);
-    }
-}
-
-
-/* =========================================================
-   GALLERY VIDEO
-========================================================= */
-
-#galleryMainVideo {
-    display: none;
-
-    width: 100%;
-    height: 100%;
-
-    max-height: 65vh;
-
-    object-fit: contain;
-
-    background: #000;
-
-    border-radius: 18px;
-
-    opacity: 0;
-
-    transition:
-        opacity 0.4s ease,
-        transform 0.4s ease;
-}
-
-#galleryMainVideo.gallery-enter {
-    opacity: 1;
-
-    animation:
-        galleryVideoEnter
-        0.55s
-        ease
-        both;
-}
-
-@keyframes galleryVideoEnter {
-
-    from {
-        opacity: 0;
-
-        transform: scale(0.96);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: scale(1);
-    }
-}
-
-
-/* =========================================================
-   GALLERY VIDEO THUMBNAIL
-========================================================= */
-
-.video-thumbnail {
-    width: 100%;
-    height: 100%;
-
-    min-height: 70px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 6px;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #111,
-            #292929
-        );
-
-    color: white;
-}
-
-.video-thumbnail i {
-    width: 32px;
-    height: 32px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 50%;
-
-    background: var(--gold-light);
-
-    color: #111;
-
-    font-size: 11px;
-}
-
-.video-thumbnail span {
-    font-size: 8px;
-
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-}
-
-
-/* =========================================================
-   GALLERY ARROWS
-========================================================= */
 
 .gallery-arrow {
     position: absolute;
@@ -2298,28 +1518,23 @@ footer {
     height: 45px;
 
     display: grid;
-
     place-items: center;
 
     border: none;
 
     border-radius: 50%;
 
-    background:
-        rgba(255,255,255,0.95);
+    background: rgba(255,255,255,0.95);
 
     cursor: pointer;
 
-    box-shadow:
-        0 10px 25px
-        rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 
     transition: 0.3s;
 }
 
 .gallery-arrow:hover {
     background: var(--text);
-
     color: white;
 }
 
@@ -2331,80 +1546,44 @@ footer {
     right: 15px;
 }
 
-
-/* =========================================================
-   GALLERY THUMBNAILS
-========================================================= */
-
 .gallery-thumbnails {
     display: flex;
-
     gap: 12px;
-
     margin-top: 16px;
-
     overflow-x: auto;
 }
 
 .gallery-thumbnails img {
     width: 96px;
     height: 68px;
-
     object-fit: cover;
-
     object-position: center;
-
     border-radius: 10px;
-
     cursor: pointer;
-
     flex: 0 0 96px;
 }
 
 .gallery-thumb {
     min-width: 90px;
-
     width: 90px;
-
     height: 65px;
 
     border-radius: 9px;
 
     overflow: hidden;
 
-    border:
-        2px solid
-        transparent;
+    border: 2px solid transparent;
 
     cursor: pointer;
 
     opacity: 0.55;
 
-    transition:
-        transform 0.3s ease,
-        opacity 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.gallery-thumb:hover {
-    transform:
-        translateY(-5px)
-        scale(1.04);
+    transition: 0.3s;
 }
 
 .gallery-thumb.active {
     border-color: var(--gold);
-
     opacity: 1;
-
-    transform:
-        translateY(-4px)
-        scale(1.03);
-
-    box-shadow:
-        0 10px 25px
-        rgba(0,0,0,0.12);
 }
 
 .gallery-thumb img {
@@ -2412,12 +1591,6 @@ footer {
     height: 100%;
 
     object-fit: cover;
-}
-
-.gallery-thumb.active .video-thumbnail {
-    box-shadow:
-        0 0 0 2px var(--gold-light),
-        0 8px 25px rgba(0,0,0,0.2);
 }
 
 
@@ -2438,9 +1611,7 @@ footer {
     padding: 0 18px;
 
     display: flex;
-
     align-items: center;
-
     gap: 9px;
 
     background: #1f9d57;
@@ -2449,12 +1620,9 @@ footer {
 
     border-radius: 100px;
 
-    box-shadow:
-        0 15px 35px
-        rgba(31,157,87,0.25);
+    box-shadow: 0 15px 35px rgba(31,157,87,0.25);
 
     font-size: 11px;
-
     font-weight: 700;
 
     transition: 0.3s;
@@ -2470,804 +1638,27 @@ footer {
 
 
 /* =========================================================
-   GENERAL ANIMATIONS
+   ANIMATIONS
 ========================================================= */
 
 @keyframes fadeUp {
-
     from {
         opacity: 0;
-
-        transform:
-            translateY(25px);
+        transform: translateY(25px);
     }
 
     to {
         opacity: 1;
-
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 }
 
 .hero-content {
-    animation:
-        fadeUp
-        0.8s
-        ease
-        forwards;
+    animation: fadeUp 0.8s ease forwards;
 }
 
 .hero-visual {
-    animation:
-        fadeUp
-        1s
-        0.15s
-        ease
-        both;
-}
-
-
-/* =========================================================
-   DESIGNER CREDIT
-========================================================= */
-
-.designer-credit {
-    position: relative;
-
-    z-index: 5;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    padding: 22px 15px;
-
-    font-family: "Poppins", sans-serif;
-
-    text-align: center;
-
-    background:
-        rgba(255,255,255,0.7);
-
-    backdrop-filter: blur(10px);
-
-    border-top:
-        1px solid
-        rgba(178,138,69,0.12);
-
-    color: #777;
-
-    font-size: 12px;
-
-    letter-spacing: 1px;
-}
-
-.designer-credit strong {
-    font-family: "Poppins", sans-serif;
-
-    font-size: 13px;
-
-    font-weight: 600;
-
-    letter-spacing: 1.2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #9b7028,
-            #d4af62,
-            #9b7028
-        );
-
-    -webkit-background-clip: text;
-
-    background-clip: text;
-
-    color: transparent;
-
-    background-size: 200% auto;
-
-    animation:
-        designerShine
-        4s
-        linear
-        infinite;
-}
-
-@keyframes designerShine {
-
-    0% {
-        background-position: 0% center;
-    }
-
-    100% {
-        background-position: 200% center;
-    }
-}
-
-
-/* =========================================================
-   INTRO ANIMATION
-========================================================= */
-
-#asomi-intro {
-    position: fixed;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100vh;
-
-    z-index: 99999;
-
-    overflow: hidden;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background:
-        radial-gradient(
-            circle at center,
-            #1b1408 0%,
-            #090705 38%,
-            #020202 75%,
-            #000000 100%
-        );
-
-    opacity: 1;
-
-    visibility: visible;
-
-    transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
-}
-
-#asomi-intro.asomi-intro-hide {
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   INTRO BACKGROUND
-========================================================= */
-
-.asomi-intro-bg {
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 50% 42%,
-            rgba(255, 195, 65, .16),
-            transparent 20%
-        ),
-        radial-gradient(
-            circle at 50% 50%,
-            rgba(180, 120, 20, .08),
-            transparent 50%
-        );
-
-    animation:
-        asomiBackgroundPulse
-        5s
-        ease-in-out
-        infinite;
-}
-
-@keyframes asomiBackgroundPulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.08);
-    }
-}
-
-
-/* =========================================================
-   INTRO PARTICLES
-========================================================= */
-
-.asomi-particles {
-    position: absolute;
-
-    inset: 0;
-
-    overflow: hidden;
-}
-
-.asomi-particle {
-    position: absolute;
-
-    width: 3px;
-    height: 3px;
-
-    border-radius: 50%;
-
-    background: #f4c65b;
-
-    box-shadow:
-        0 0 7px #f4c65b,
-        0 0 16px rgba(255, 190, 60, .7);
-
-    animation:
-        asomiParticleFloat
-        var(--particle-time)
-        linear
-        infinite;
-}
-
-@keyframes asomiParticleFloat {
-
-    0% {
-        transform:
-            translate3d(
-                0,
-                110vh,
-                0
-            )
-            scale(.2);
-
-        opacity: 0;
-    }
-
-    15% {
-        opacity: 1;
-    }
-
-    85% {
-        opacity: .8;
-    }
-
-    100% {
-        transform:
-            translate3d(
-                var(--particle-x),
-                -20vh,
-                0
-            )
-            scale(1);
-
-        opacity: 0;
-    }
-}
-
-
-/* =========================================================
-   INTRO RINGS
-========================================================= */
-
-.asomi-ring {
-    position: absolute;
-
-    left: 50%;
-    top: 43%;
-
-    border-radius: 50%;
-
-    transform:
-        translate(-50%, -50%)
-        scale(.1);
-
-    opacity: 0;
-}
-
-.asomi-ring-1 {
-    width: 430px;
-    height: 430px;
-
-    border:
-        1px solid
-        rgba(255, 203, 82, .9);
-
-    box-shadow:
-        0 0 20px
-        rgba(255, 190, 40, .8),
-
-        0 0 70px
-        rgba(255, 170, 20, .25);
-
-    animation:
-        asomiRingReveal
-        2s
-        cubic-bezier(.16,1,.3,1)
-        .4s
-        forwards,
-
-        asomiRingRotate
-        10s
-        linear
-        2.5s
-        infinite;
-}
-
-.asomi-ring-2 {
-    width: 350px;
-    height: 350px;
-
-    border:
-        1px solid
-        rgba(255, 220, 130, .5);
-
-    box-shadow:
-        0 0 35px
-        rgba(255, 190, 50, .25);
-
-    animation:
-        asomiRingReveal
-        1.7s
-        cubic-bezier(.16,1,.3,1)
-        .7s
-        forwards,
-
-        asomiRingRotateReverse
-        8s
-        linear
-        2.5s
-        infinite;
-}
-
-.asomi-ring-3 {
-    width: 280px;
-    height: 280px;
-
-    border:
-        1px solid
-        rgba(255, 210, 100, .25);
-
-    animation:
-        asomiRingReveal
-        1.5s
-        cubic-bezier(.16,1,.3,1)
-        .9s
-        forwards;
-}
-
-@keyframes asomiRingReveal {
-
-    0% {
-        transform:
-            translate(-50%, -50%)
-            scale(.1);
-
-        opacity: 0;
-    }
-
-    60% {
-        opacity: 1;
-    }
-
-    100% {
-        transform:
-            translate(-50%, -50%)
-            scale(1);
-
-        opacity: 1;
-    }
-}
-
-@keyframes asomiRingRotate {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-}
-
-@keyframes asomiRingRotateReverse {
-
-    from {
-        transform:
-            translate(-50%, -50%)
-            rotate(360deg);
-    }
-
-    to {
-        transform:
-            translate(-50%, -50%)
-            rotate(0deg);
-    }
-}
-
-
-/* =========================================================
-   INTRO CENTER LIGHT
-========================================================= */
-
-.asomi-center-light {
-    position: absolute;
-
-    left: 50%;
-    top: 43%;
-
-    width: 260px;
-    height: 260px;
-
-    transform:
-        translate(-50%, -50%);
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255, 225, 150, .5),
-            rgba(255, 180, 30, .12) 38%,
-            transparent 72%
-        );
-
-    filter: blur(15px);
-
-    opacity: 0;
-
-    animation:
-        asomiLightReveal
-        2s
-        ease
-        1.1s
-        forwards,
-
-        asomiLightPulse
-        3s
-        ease-in-out
-        3s
-        infinite;
-}
-
-@keyframes asomiLightReveal {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translate(-50%, -50%)
-            scale(.1);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1);
-    }
-}
-
-@keyframes asomiLightPulse {
-
-    0%,
-    100% {
-        opacity: .45;
-    }
-
-    50% {
-        opacity: .9;
-    }
-}
-
-
-/* =========================================================
-   INTRO LOGO
-========================================================= */
-
-.asomi-intro-logo {
-    position: absolute;
-
-    left: 50%;
-    top: 43%;
-
-    width: 330px;
-
-    transform:
-        translate(-50%, -50%)
-        scale(.25);
-
-    z-index: 10;
-
-    opacity: 0;
-
-    perspective: 1000px;
-
-    animation:
-        asomiLogoReveal
-        2.2s
-        cubic-bezier(.16,1,.3,1)
-        1.5s
-        forwards;
-}
-
-.asomi-intro-logo img {
-    width: 100%;
-    height: auto;
-
-    display: block;
-
-    filter:
-        drop-shadow(
-            0 0 12px
-            rgba(255, 200, 80, .65)
-        )
-        drop-shadow(
-            0 20px 35px
-            rgba(0,0,0,.9)
-        );
-}
-
-.asomi-logo-glow {
-    position: absolute;
-
-    inset: 8%;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255, 190, 50, .4),
-            transparent 70%
-        );
-
-    filter: blur(30px);
-
-    z-index: -1;
-
-    animation:
-        asomiLogoGlow
-        2.5s
-        ease-in-out
-        infinite;
-}
-
-@keyframes asomiLogoReveal {
-
-    0% {
-        opacity: 0;
-
-        transform:
-            translate(-50%, -50%)
-            scale(.2)
-            rotateY(-40deg);
-
-        filter: blur(15px);
-    }
-
-    55% {
-        opacity: 1;
-    }
-
-    75% {
-        transform:
-            translate(-50%, -50%)
-            scale(1.08)
-            rotateY(8deg);
-    }
-
-    100% {
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1)
-            rotateY(0);
-
-        filter: blur(0);
-    }
-}
-
-@keyframes asomiLogoGlow {
-
-    0%,
-    100% {
-        opacity: .35;
-
-        transform: scale(.9);
-    }
-
-    50% {
-        opacity: 1;
-
-        transform: scale(1.15);
-    }
-}
-
-
-/* =========================================================
-   INTRO BRAND
-========================================================= */
-
-.asomi-intro-brand {
-    position: absolute;
-
-    top: 68%;
-    left: 50%;
-
-    width: 100%;
-
-    text-align: center;
-
-    transform:
-        translate(-50%, 35px);
-
-    opacity: 0;
-
-    z-index: 20;
-
-    animation:
-        asomiBrandReveal
-        1.5s
-        cubic-bezier(.16,1,.3,1)
-        4s
-        forwards;
-}
-
-.asomi-intro-brand h1 {
-    font-family:
-        "Playfair Display",
-        serif;
-
-    font-size:
-        clamp(25px, 4vw, 58px);
-
-    font-weight: 700;
-
-    letter-spacing:
-        clamp(4px, .8vw, 12px);
-
-    color: #f5d17a;
-
-    text-shadow:
-        0 0 10px
-        rgba(255, 205, 100, .5),
-
-        0 0 35px
-        rgba(255, 170, 30, .25);
-}
-
-.asomi-divider {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 13px;
-
-    margin: 15px auto;
-}
-
-.asomi-divider span {
-    width: 75px;
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #d8a943
-        );
-}
-
-.asomi-divider span:last-child {
-    background:
-        linear-gradient(
-            90deg,
-            #d8a943,
-            transparent
-        );
-}
-
-.asomi-divider i {
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background: #ffd86d;
-
-    box-shadow:
-        0 0 12px #ffd86d;
-}
-
-.asomi-intro-brand p {
-    font-size: 13px;
-
-    letter-spacing: 8px;
-
-    color:
-        rgba(255,255,255,.75);
-}
-
-@keyframes asomiBrandReveal {
-
-    from {
-        opacity: 0;
-
-        transform:
-            translate(-50%, 50px);
-
-        filter: blur(10px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform:
-            translate(-50%, 0);
-
-        filter: blur(0);
-    }
-}
-
-
-/* =========================================================
-   INTRO LOADER
-========================================================= */
-
-.asomi-loader {
-    position: absolute;
-
-    bottom: 7%;
-
-    width: 100px;
-    height: 2px;
-
-    background:
-        rgba(255,255,255,.12);
-
-    overflow: hidden;
-}
-
-.asomi-loader span {
-    display: block;
-
-    width: 0;
-    height: 100%;
-
-    background: #e4b64e;
-
-    box-shadow:
-        0 0 12px #e4b64e;
-
-    animation:
-        asomiLoading
-        6.5s
-        cubic-bezier(.4,0,.2,1)
-        forwards;
-}
-
-@keyframes asomiLoading {
-
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
+    animation: fadeUp 1s 0.15s ease both;
 }
 
 
@@ -3306,22 +1697,13 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .admin-login-link {
-        width: 100%;
-
-        justify-content: center;
-    }
 }
 
 
 @media (max-width: 760px) {
 
     .container {
-        width:
-            min(
-                calc(100% - 30px),
-                600px
-            );
+        width: min(100% - 30px, 600px);
     }
 
     .nav-button {
@@ -3330,7 +1712,6 @@ footer {
 
     .menu-button {
         display: grid;
-
         place-items: center;
     }
 
@@ -3344,37 +1725,28 @@ footer {
         padding: 20px;
 
         flex-direction: column;
-
         align-items: stretch;
 
-        background:
-            rgba(255,255,255,0.97);
+        background: rgba(255,255,255,0.97);
 
-        border:
-            1px solid
-            var(--border);
+        border: 1px solid var(--border);
 
         border-radius: 18px;
 
         box-shadow: var(--shadow);
 
         opacity: 0;
-
         visibility: hidden;
 
-        transform:
-            translateY(-10px);
+        transform: translateY(-10px);
 
         transition: 0.3s;
     }
 
     .nav.open {
         opacity: 1;
-
         visibility: visible;
-
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
 
     .nav-link {
@@ -3394,12 +1766,7 @@ footer {
     }
 
     .hero h1 {
-        font-size:
-            clamp(
-                46px,
-                13vw,
-                65px
-            );
+        font-size: clamp(46px, 13vw, 65px);
     }
 
     .hero-visual {
@@ -3412,13 +1779,11 @@ footer {
 
     .floating-one {
         left: 0;
-
         bottom: 70px;
     }
 
     .floating-two {
         right: 0;
-
         top: 50px;
     }
 
@@ -3470,13 +1835,11 @@ footer {
 
     .footer-top {
         grid-template-columns: 1fr;
-
         gap: 35px;
     }
 
     .footer-bottom {
         flex-direction: column;
-
         gap: 10px;
     }
 
@@ -3498,20 +1861,2083 @@ footer {
 
     .floating-whatsapp {
         width: 54px;
-
         padding: 0;
-
         justify-content: center;
     }
 
-    .hero-card-logo {
-        width: 105px;
-        height: 105px;
+}
+
+
+@media (max-width: 420px) {
+
+    .hero-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-card {
+        width: 260px;
     }
 
     .floating-card {
-        transform: scale(.88);
+        transform: scale(0.85);
     }
+
+    .image-badge {
+        right: -10px;
+    }
+
+}
+/* =========================================
+   FINAL FIX — ASOMI HEADER LOGO
+========================================= */
+
+header .logo,
+.navbar .logo,
+nav .logo {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+
+    width: auto !important;
+    min-width: 190px !important;
+    max-width: none !important;
+
+    height: 64px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    position: static !important;
+    transform: none !important;
+
+    overflow: visible !important;
+    flex-shrink: 0 !important;
+
+    text-decoration: none !important;
+}
+
+/* Logo image container */
+header .logo .logo-mark,
+.navbar .logo .logo-mark,
+nav .logo .logo-mark {
+    width: 52px !important;
+    height: 52px !important;
+
+    min-width: 52px !important;
+    max-width: 52px !important;
+
+    flex: 0 0 52px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    position: static !important;
+    transform: none !important;
+
+    overflow: visible !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Actual logo image */
+header .logo .logo-mark img,
+.navbar .logo .logo-mark img,
+nav .logo .logo-mark img {
+    display: block !important;
+
+    width: 52px !important;
+    height: 52px !important;
+
+    min-width: 52px !important;
+    min-height: 52px !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    position: static !important;
+    transform: none !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* ASOMI ENTERPRISE */
+header .logo .logo-text,
+.navbar .logo .logo-text,
+nav .logo .logo-text {
+    display: flex !important;
+    flex-direction: column !important;
+
+    align-items: flex-start !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 115px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    position: static !important;
+    transform: none !important;
+
+    overflow: visible !important;
+
+    white-space: nowrap !important;
+}
+
+header .logo .logo-text strong,
+.navbar .logo .logo-text strong,
+nav .logo .logo-text strong {
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 18px !important;
+    line-height: 1.1 !important;
+
+    white-space: nowrap !important;
+}
+
+header .logo .logo-text small,
+.navbar .logo .logo-text small,
+nav .logo .logo-text small {
+    display: block !important;
+
+    margin: 5px 0 0 0 !important;
+    padding: 0 !important;
+
+    font-size: 9px !important;
+    line-height: 1 !important;
+
+    letter-spacing: 2px !important;
+
+    white-space: nowrap !important;
+}
+
+/* Remove old AE decoration */
+header .logo .logo-mark::before,
+header .logo .logo-mark::after,
+.navbar .logo .logo-mark::before,
+.navbar .logo .logo-mark::after,
+nav .logo .logo-mark::before,
+nav .logo .logo-mark::after {
+    content: none !important;
+    display: none !important;
+}
+/* =========================================
+   GALLERY PHOTO FRAME - FIXED SIZE
+========================================= */
+
+.gallery-main {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #f1f1f3;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+    object-position: center;
+    display: block;
+    border-radius: 18px;
+}
+/* =========================================
+   PREMIUM 3D MOUSE FLOAT EFFECT
+========================================= */
+
+.hero-visual {
+    perspective: 1200px;
+}
+
+.hero-card {
+    transform-style: preserve-3d;
+    transition: transform 0.18s ease-out;
+    will-change: transform;
+}
+
+/* Keep the effect subtle */
+.hero-visual:hover .hero-card {
+    transition: transform 0.1s ease-out;
+}
+
+
+/* Floating cards stay above the main visual */
+.floating-card {
+    transform-style: preserve-3d;
+    transition: transform 0.25s ease-out;
+}
+
+
+/* Mobile/tablet: disable mouse 3D effect */
+@media (max-width: 768px) {
+    .hero-card {
+        transform: none !important;
+    }
+}
+/* =========================================
+   PREMIUM FLOATING SERVICE CARDS
+========================================= */
+
+.service-card {
+    position: relative;
+    transform: translateY(0);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+    animation: serviceFloat 4.5s ease-in-out infinite;
+    will-change: transform;
+}
+
+/* Floating animation */
+@keyframes serviceFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Different timing = natural movement */
+.service-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.service-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.service-card:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+.service-card:nth-child(5) {
+    animation-delay: 2s;
+}
+
+.service-card:nth-child(6) {
+    animation-delay: 2.5s;
+}
+
+.service-card:nth-child(7) {
+    animation-delay: 3s;
+}
+
+.service-card:nth-child(8) {
+    animation-delay: 3.5s;
+}
+
+/* Premium hover effect */
+.service-card:hover {
+    animation-play-state: paused;
+
+    transform: translateY(-14px) scale(1.025);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.12);
+
+    z-index: 5;
+}
+
+/* Keep links/buttons inside cards working normally */
+.service-card a,
+.service-card button {
+    position: relative;
+    z-index: 2;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .service-card {
+        animation-duration: 5s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-6px) scale(1.01);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .service-card {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+/* =========================================================
+   ASOMI ENTERPRISE
+   PREMIUM SPACE + MOUSE FOLLOW BACKGROUND
+========================================================= */
+
+.space-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(178, 138, 69, 0.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(216, 187, 130, 0.07),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #faf8f3 50%,
+            #ffffff 100%
+        );
+
+    animation: premiumBackgroundScale 20s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   SLOW BACKGROUND SCALE
+========================================================= */
+
+@keyframes premiumBackgroundScale {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.025);
+    }
+
+    100% {
+        transform: scale(1.055);
+    }
+}
+
+
+/* =========================================================
+   MOUSE FOLLOW GOLDEN LIGHT
+========================================================= */
+
+.mouse-glow {
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    left: 0;
+    top: 0;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(178, 138, 69, 0.16) 0%,
+            rgba(178, 138, 69, 0.08) 30%,
+            rgba(178, 138, 69, 0.03) 52%,
+            transparent 72%
+        );
+
+    filter: blur(25px);
+
+    transform:
+        translate(
+            calc(var(--mouse-x, 50vw) - 240px),
+            calc(var(--mouse-y, 50vh) - 240px)
+        );
+
+    transition:
+        transform 0.45s cubic-bezier(.2,.8,.2,1);
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   SPACE PARTICLES
+========================================================= */
+
+.space-particles {
+    position: absolute;
+    inset: 0;
+}
+
+.space-particle {
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: rgba(178, 138, 69, 0.35);
+
+    box-shadow:
+        0 0 8px rgba(178, 138, 69, 0.25);
+
+    animation:
+        particleFloat var(--particle-duration)
+        ease-in-out infinite alternate;
+
+    opacity: var(--particle-opacity);
+}
+
+
+@keyframes particleFloat {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            scale(0.7);
+
+        opacity: 0.15;
+    }
+
+    50% {
+        opacity: var(--particle-opacity);
+    }
+
+    100% {
+        transform:
+            translate3d(
+                var(--particle-x),
+                var(--particle-y),
+                0
+            )
+            scale(1.3);
+
+        opacity: 0.05;
+    }
+}
+
+
+/* =========================================================
+   KEEP WEBSITE CONTENT ABOVE BACKGROUND
+========================================================= */
+
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================================================
+   GALLERY IMAGE ANIMATION
+========================================================= */
+
+.gallery-image-wrap {
+    overflow: hidden;
+}
+
+#galleryMainImage {
+    opacity: 1;
+
+    transform:
+        scale(1)
+        translateX(0);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.55s cubic-bezier(.2,.8,.2,1);
+
+    will-change: transform, opacity;
+}
+
+
+/* Image enters gallery */
+#galleryMainImage.gallery-enter {
+    animation: galleryImageEnter 0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+
+@keyframes galleryImageEnter {
+
+    0% {
+        opacity: 0;
+        transform:
+            scale(1.08)
+            translateX(25px);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            scale(1)
+            translateX(0);
+    }
+}
+
+
+/* =========================================================
+   GALLERY THUMBNAIL ANIMATION
+========================================================= */
+
+.gallery-thumb {
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.gallery-thumb:hover {
+    transform: translateY(-5px) scale(1.04);
+}
+
+.gallery-thumb.active {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   GALLERY WINDOW OPEN ANIMATION
+========================================================= */
+
+.gallery-modal.active .gallery-window {
+    animation: galleryWindowOpen 0.5s cubic-bezier(.2,.8,.2,1);
+}
+
+
+@keyframes galleryWindowOpen {
+
+    0% {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(0.94);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   SERVICE CARD PREMIUM FLOAT
+========================================================= */
+
+.service-card {
+    animation:
+        serviceCardFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+@keyframes serviceCardFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.service-card:hover {
+    animation-play-state: paused;
+
+    transform:
+        translateY(-12px)
+        scale(1.02);
+}
+
+
+/* =========================================================
+   DIFFERENT SERVICE CARD TIMING
+========================================================= */
+
+.service-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.service-card:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.service-card:nth-child(4) {
+    animation-delay: 1.05s;
+}
+
+.service-card:nth-child(5) {
+    animation-delay: 1.4s;
+}
+
+.service-card:nth-child(6) {
+    animation-delay: 1.75s;
+}
+
+.service-card:nth-child(7) {
+    animation-delay: 2.1s;
+}
+
+.service-card:nth-child(8) {
+    animation-delay: 2.45s;
+}
+
+.service-card:nth-child(9) {
+    animation-delay: 2.8s;
+}
+
+.service-card:nth-child(10) {
+    animation-delay: 3.15s;
+}
+
+.service-card:nth-child(11) {
+    animation-delay: 3.5s;
+}
+
+.service-card:nth-child(12) {
+    animation-delay: 3.85s;
+}
+
+.service-card:nth-child(13) {
+    animation-delay: 4.2s;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .mouse-glow {
+        display: none;
+    }
+
+    .space-background {
+        animation-duration: 28s;
+    }
+
+    .space-particle {
+        opacity: 0.5;
+    }
+
+    .service-card {
+        animation-duration: 6s;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .space-background,
+    .space-particle,
+    .service-card,
+    #galleryMainImage,
+    .gallery-window {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .mouse-glow {
+        display: none;
+    }
+}
+/* =========================================
+   DESIGNER CREDIT
+========================================= */
+
+.designer-credit {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 22px 15px;
+
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+
+    border-top: 1px solid rgba(178, 138, 69, 0.12);
+
+    color: #777;
+
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.designer-credit strong {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+
+    background: linear-gradient(
+        90deg,
+        #9b7028,
+        #d4af62,
+        #9b7028
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    background-size: 200% auto;
+
+    animation: designerShine 4s linear infinite;
+}
+
+@keyframes designerShine {
+
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .designer-credit {
+        flex-direction: column;
+        gap: 4px;
+
+        padding: 18px 10px;
+    }
+
+    .designer-credit strong {
+        font-size: 12px;
+    }
+}
+/* =========================================================
+   GALLERY VIDEO
+========================================================= */
+
+#galleryMainVideo {
+
+    display: none;
+
+    width: 100%;
+    height: 100%;
+
+    max-height: 65vh;
+
+    object-fit: contain;
+
+    background: #000;
+
+    border-radius: 18px;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+}
+
+
+/* VIDEO ANIMATION */
+
+#galleryMainVideo.gallery-enter {
+
+    opacity: 1;
+
+    animation: galleryVideoEnter 0.55s ease both;
+
+}
+
+
+@keyframes galleryVideoEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.96);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/* =========================================
+   VIDEO THUMBNAIL
+========================================= */
+
+.video-thumbnail {
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 70px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #292929
+        );
+
+    color: white;
+
+}
+
+
+/* PLAY ICON */
+
+.video-thumbnail i {
+
+    width: 32px;
+    height: 32px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--gold-light);
+
+    color: #111;
+
+    font-size: 11px;
+
+}
+
+
+/* VIDEO TEXT */
+
+.video-thumbnail span {
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* ACTIVE VIDEO */
+
+.gallery-thumb.active .video-thumbnail {
+
+    box-shadow:
+        0 0 0 2px var(--gold-light),
+        0 8px 25px rgba(0,0,0,0.2);
+
+}
+/* =========================================================
+   ASOMI ENTERPRISE
+   PREMIUM SPARKLE / PARTICLE MOUSE CURSOR
+========================================================= */
+
+/* Hide normal cursor on desktop */
+/* =========================================================
+   KEEP ORIGINAL MOUSE POINTER
+========================================================= */
+
+@media (min-width: 769px) {
+
+    html,
+    body,
+    a,
+    button,
+    .service-card {
+        cursor: auto !important;
+    }
+
+}
+
+
+/* Hide our fake cursor - keep original pointer */
+
+#customCursor {
+    display: none !important;
+}
+
+/* =========================================================
+   MAIN CUSTOM CURSOR
+========================================================= */
+
+#customCursor {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 34px;
+    height: 34px;
+
+    pointer-events: none;
+
+    z-index: 999999;
+
+    transform:
+        translate3d(
+            -50%,
+            -50%,
+            0
+        );
+
+    will-change: transform;
+
+}
+
+
+/* CENTER DOT */
+
+.cursor-core {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 7px;
+    height: 7px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: #d8bb82;
+
+    box-shadow:
+        0 0 8px rgba(216,187,130,0.9),
+        0 0 18px rgba(216,187,130,0.55);
+
+}
+
+
+/* OUTER RING */
+
+.cursor-ring {
+
+    position: absolute;
+
+    inset: 3px;
+
+    border: 1px solid rgba(178,138,69,0.65);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px rgba(178,138,69,0.25);
+
+    animation:
+        cursorRingPulse
+        2.2s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes cursorRingPulse {
+
+    0%,
+    100% {
+
+        transform: scale(0.85);
+
+        opacity: 0.55;
+
+    }
+
+    50% {
+
+        transform: scale(1.08);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================================================
+   SPARKLE PARTICLES
+========================================================= */
+
+.cursor-spark {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: var(--spark-size);
+    height: var(--spark-size);
+
+    pointer-events: none;
+
+    z-index: 999998;
+
+    transform:
+        translate3d(
+            var(--spark-x),
+            var(--spark-y),
+            0
+        )
+        rotate(45deg);
+
+    background: #d8bb82;
+
+    box-shadow:
+        0 0 5px rgba(216,187,130,0.9),
+        0 0 14px rgba(216,187,130,0.55);
+
+    animation:
+        sparkleFade
+        var(--spark-life)
+        ease-out
+        forwards;
+
+}
+
+
+@keyframes sparkleFade {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate3d(
+                var(--spark-x),
+                var(--spark-y),
+                0
+            )
+            rotate(45deg)
+            scale(0.2);
+
+    }
+
+    15% {
+
+        opacity: 1;
+
+        transform:
+            translate3d(
+                var(--spark-x),
+                var(--spark-y),
+                0
+            )
+            rotate(45deg)
+            scale(1);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate3d(
+                calc(var(--spark-x) + var(--spark-dx)),
+                calc(var(--spark-y) + var(--spark-dy)),
+                0
+            )
+            rotate(135deg)
+            scale(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   CLICK SPARKLE BURST
+========================================================= */
+
+.cursor-burst {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 5px;
+    height: 5px;
+
+    pointer-events: none;
+
+    z-index: 999999;
+
+    border-radius: 50%;
+
+    background: #d8bb82;
+
+    box-shadow:
+        0 0 8px rgba(216,187,130,0.9),
+        0 0 20px rgba(216,187,130,0.5);
+
+    animation:
+        cursorBurst
+        0.65s
+        ease-out
+        forwards;
+
+}
+
+
+@keyframes cursorBurst {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--burst-x)),
+                calc(-50% + var(--burst-y))
+            )
+            scale(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   HOVER EFFECT
+========================================================= */
+
+#customCursor.cursor-hover {
+
+    width: 48px;
+    height: 48px;
+
+}
+
+
+#customCursor.cursor-hover .cursor-ring {
+
+    border-color:
+        rgba(178,138,69,0.95);
+
+    box-shadow:
+        0 0 18px rgba(178,138,69,0.45);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    #customCursor,
+    #cursorSparkleContainer {
+
+        display: none !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #customCursor,
+    #cursorSparkleContainer {
+
+        display: none !important;
+
+    }
+
+}
+/* =========================================================
+   ASOMI ENTERPRISE
+   PREMIUM WEBSITE OPENING ANIMATION
+========================================================= */
+
+#asomi-intro {
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 99999;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #1b1408 0%,
+            #090705 38%,
+            #020202 75%,
+            #000000 100%
+        );
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
+}
+
+
+/* EXIT */
+
+#asomi-intro.asomi-intro-hide {
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* BACKGROUND */
+
+.asomi-intro-bg {
+
+    position: absolute;
+    inset: 0;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(255, 195, 65, .16),
+            transparent 20%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(180, 120, 20, .08),
+            transparent 50%
+        );
+
+    animation:
+        asomiBackgroundPulse 5s ease-in-out infinite;
+
+}
+
+
+@keyframes asomiBackgroundPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.asomi-particles {
+
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+}
+
+
+.asomi-particle {
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background: #f4c65b;
+
+    box-shadow:
+        0 0 7px #f4c65b,
+        0 0 16px rgba(255, 190, 60, .7);
+
+    animation:
+        asomiParticleFloat
+        var(--particle-time)
+        linear
+        infinite;
+
+}
+
+
+@keyframes asomiParticleFloat {
+
+    0% {
+
+        transform:
+            translate3d(
+                0,
+                110vh,
+                0
+            )
+            scale(.2);
+
+        opacity: 0;
+
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: .8;
+    }
+
+    100% {
+
+        transform:
+            translate3d(
+                var(--particle-x),
+                -20vh,
+                0
+            )
+            scale(1);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   ENERGY RINGS
+========================================================= */
+
+.asomi-ring {
+
+    position: absolute;
+
+    left: 50%;
+    top: 43%;
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.1);
+
+    opacity: 0;
+
+}
+
+
+.asomi-ring-1 {
+
+    width: 430px;
+    height: 430px;
+
+    border:
+        1px solid
+        rgba(255, 203, 82, .9);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(255, 190, 40, .8),
+
+        0 0 70px
+        rgba(255, 170, 20, .25);
+
+    animation:
+
+        asomiRingReveal
+        2s
+        cubic-bezier(.16,1,.3,1)
+        .4s
+        forwards,
+
+        asomiRingRotate
+        10s
+        linear
+        2.5s
+        infinite;
+
+}
+
+
+.asomi-ring-2 {
+
+    width: 350px;
+    height: 350px;
+
+    border:
+        1px solid
+        rgba(255, 220, 130, .5);
+
+    box-shadow:
+        0 0 35px
+        rgba(255, 190, 50, .25);
+
+    animation:
+
+        asomiRingReveal
+        1.7s
+        cubic-bezier(.16,1,.3,1)
+        .7s
+        forwards,
+
+        asomiRingRotateReverse
+        8s
+        linear
+        2.5s
+        infinite;
+
+}
+
+
+.asomi-ring-3 {
+
+    width: 280px;
+    height: 280px;
+
+    border:
+        1px solid
+        rgba(255, 210, 100, .25);
+
+    animation:
+
+        asomiRingReveal
+        1.5s
+        cubic-bezier(.16,1,.3,1)
+        .9s
+        forwards;
+
+}
+
+
+@keyframes asomiRingReveal {
+
+    0% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(.1);
+
+        opacity: 0;
+
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes asomiRingRotate {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+
+@keyframes asomiRingRotateReverse {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+}
+
+
+/* =========================================================
+   CENTER LIGHT
+========================================================= */
+
+.asomi-center-light {
+
+    position: absolute;
+
+    left: 50%;
+    top: 43%;
+
+    width: 260px;
+    height: 260px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255, 225, 150, .5),
+            rgba(255, 180, 30, .12) 38%,
+            transparent 72%
+        );
+
+    filter: blur(15px);
+
+    opacity: 0;
+
+    animation:
+
+        asomiLightReveal
+        2s
+        ease
+        1.1s
+        forwards,
+
+        asomiLightPulse
+        3s
+        ease-in-out
+        3s
+        infinite;
+
+}
+
+
+@keyframes asomiLightReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.1);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes asomiLightPulse {
+
+    0%,
+    100% {
+        opacity: .45;
+    }
+
+    50% {
+        opacity: .9;
+    }
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.asomi-intro-logo {
+
+    position: absolute;
+
+    left: 50%;
+    top: 43%;
+
+    width: 330px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.25);
+
+    z-index: 10;
+
+    opacity: 0;
+
+    perspective: 1000px;
+
+    animation:
+
+        asomiLogoReveal
+        2.2s
+        cubic-bezier(.16,1,.3,1)
+        1.5s
+        forwards;
+
+}
+
+
+.asomi-intro-logo img {
+
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    filter:
+
+        drop-shadow(
+            0 0 12px
+            rgba(255, 200, 80, .65)
+        )
+
+        drop-shadow(
+            0 20px 35px
+            rgba(0,0,0,.9)
+        );
+
+}
+
+
+.asomi-logo-glow {
+
+    position: absolute;
+
+    inset: 8%;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255, 190, 50, .4),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    z-index: -1;
+
+    animation:
+        asomiLogoGlow
+        2.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes asomiLogoReveal {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.2)
+            rotateY(-40deg);
+
+        filter: blur(15px);
+
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    75% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.08)
+            rotateY(8deg);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotateY(0);
+
+        filter: blur(0);
+
+    }
+
+}
+
+
+@keyframes asomiLogoGlow {
+
+    0%,
+    100% {
+        opacity: .35;
+        transform: scale(.9);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.asomi-intro-brand {
+
+    position: absolute;
+
+    top: 68%;
+    left: 50%;
+
+    width: 100%;
+
+    text-align: center;
+
+    transform:
+        translate(-50%, 35px);
+
+    opacity: 0;
+
+    z-index: 20;
+
+    animation:
+
+        asomiBrandReveal
+        1.5s
+        cubic-bezier(.16,1,.3,1)
+        4s
+        forwards;
+
+}
+
+
+.asomi-intro-brand h1 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(25px, 4vw, 58px);
+
+    font-weight: 700;
+
+    letter-spacing:
+        clamp(4px, .8vw, 12px);
+
+    color: #f5d17a;
+
+    text-shadow:
+
+        0 0 10px
+        rgba(255, 205, 100, .5),
+
+        0 0 35px
+        rgba(255, 170, 30, .25);
+
+}
+
+
+.asomi-divider {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    margin: 15px auto;
+
+}
+
+
+.asomi-divider span {
+
+    width: 75px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d8a943
+        );
+
+}
+
+
+.asomi-divider span:last-child {
+
+    background:
+        linear-gradient(
+            90deg,
+            #d8a943,
+            transparent
+        );
+
+}
+
+
+.asomi-divider i {
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #ffd86d;
+
+    box-shadow:
+        0 0 12px #ffd86d;
+
+}
+
+
+.asomi-intro-brand p {
+
+    font-size: 13px;
+
+    letter-spacing: 8px;
+
+    color:
+        rgba(255,255,255,.75);
+
+}
+
+
+@keyframes asomiBrandReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, 50px);
+
+        filter: blur(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, 0);
+
+        filter: blur(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.asomi-loader {
+
+    position: absolute;
+
+    bottom: 7%;
+
+    width: 100px;
+    height: 2px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    overflow: hidden;
+
+}
+
+
+.asomi-loader span {
+
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    background: #e4b64e;
+
+    box-shadow:
+        0 0 12px #e4b64e;
+
+    animation:
+        asomiLoading
+        6.5s
+        cubic-bezier(.4,0,.2,1)
+        forwards;
+
+}
+
+
+@keyframes asomiLoading {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
 
     .asomi-intro-logo {
         width: 245px;
@@ -3543,89 +3969,496 @@ footer {
     .asomi-divider span {
         width: 45px;
     }
-}
 
-
-@media (max-width: 600px) {
-
-    .designer-credit {
-        flex-direction: column;
-
-        gap: 4px;
-
-        padding: 18px 10px;
-    }
-
-    .designer-credit strong {
-        font-size: 12px;
-    }
-}
-
-
-@media (max-width: 420px) {
-
-    .hero-info {
-        flex-direction: column;
-
-        gap: 15px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    .btn {
-        width: 100%;
-    }
-
-    .hero-card {
-        width: 275px;
-    }
-
-    .hero-visual {
-        min-height: 450px;
-    }
-
-    .hero-card-logo {
-        width: 90px;
-        height: 90px;
-    }
-
-    .floating-card {
-        transform: scale(.78);
-    }
-
-    .image-badge {
-        right: -10px;
-    }
 }
 
 
 /* =========================================================
-   REDUCED MOTION
+   ASOMI ENTERPRISE — SAFE PREMIUM HERO ANIMATION
+   Keeps the original Hero layout and card proportions.
 ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+.hero-visual {
+    position: relative;
+    min-height: 580px;
+    display: grid;
+    place-items: center;
+    perspective: 1200px;
+    overflow: visible;
+}
 
-    .space-background,
-    .space-particle,
-    .service-card,
+.hero-card {
+    width: min(410px, 80%);
+    aspect-ratio: 0.72;
+    position: relative;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    will-change: transform;
+    z-index: 5;
+}
+
+.hero-card::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 28px;
+    background: linear-gradient(120deg, transparent 20%, rgba(216,187,130,.75), transparent 80%);
+    background-size: 250% 250%;
+    animation: goldBorderMove 5s linear infinite;
+    z-index: -1;
+    opacity: .65;
+    pointer-events: none;
+}
+
+@keyframes goldBorderMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.hero-card .card-top,
+.hero-card .hero-card-logo,
+.hero-card .hero-card-title,
+.hero-card .card-bottom {
+    position: relative;
+    z-index: 4;
+}
+
+.hero-card-logo {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    display: grid;
+    place-items: center;
+    margin: auto;
+    border-radius: 50%;
+    background: #fff;
+    border: 5px solid var(--gold-light);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.6), 0 0 25px rgba(216,187,130,.55), 0 0 60px rgba(178,138,69,.22);
+    animation: logoFloat 4s ease-in-out infinite;
+    overflow: visible;
+}
+
+.hero-card-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 3px;
+    border-radius: 50%;
+}
+
+@keyframes logoFloat {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-6px) scale(1.025); }
+}
+
+.hero-card-logo::before,
+.hero-card-logo::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-card-logo::before {
+    width: 145px;
+    height: 145px;
+    border: 1px solid rgba(216,187,130,.75);
+    border-left-color: transparent;
+    animation: logoRingSpin 7s linear infinite;
+}
+
+.hero-card-logo::after {
+    width: 160px;
+    height: 160px;
+    border: 1px dashed rgba(216,187,130,.30);
+    animation: logoRingReverse 11s linear infinite;
+}
+
+@keyframes logoRingSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes logoRingReverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+.floating-card {
+    z-index: 20;
+    animation: floatingChip 5s ease-in-out infinite;
+    will-change: transform;
+}
+
+.floating-one { animation-delay: -1s; }
+.floating-two { animation-delay: -3s; }
+
+@keyframes floatingChip {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.floating-card:hover {
+    animation-play-state: paused;
+    transform: translateY(-14px) scale(1.04);
+}
+
+.hero-card .card-top::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: -100px;
+    left: -220px;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,.16), transparent);
+    transform: rotate(25deg);
+    animation: cardLightSweep 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes cardLightSweep {
+    0% { left: -220px; }
+    55%, 100% { left: 450px; }
+}
+
+@media (max-width: 768px) {
+    .hero-visual { min-height: 500px; }
+    .hero-card { width: min(340px, 78%); }
+    .hero-card-logo { width: 105px; height: 105px; }
+    .floating-card { transform: scale(.88); }
+}
+
+@media (max-width: 420px) {
+    .hero-visual { min-height: 450px; }
+    .hero-card { width: 275px; }
+    .hero-card-logo { width: 90px; height: 90px; }
+    .floating-card { transform: scale(.78); }
+}
+
+@media (prefers-reduced-motion: reduce) {
     .hero-card-logo,
     .hero-card-logo::before,
     .hero-card-logo::after,
     .floating-card,
     .hero-card::after,
-    .hero-card .card-top::after,
-    #galleryMainImage,
-    .gallery-window,
-    .designer-credit strong,
-    #asomi-intro *,
-    .hero-content,
-    .hero-visual {
+    .hero-card .card-top::after {
         animation: none !important;
-
-        transition: none !important;
     }
+}
+/* =========================================
+   ADMIN LOGIN NAV BUTTON
+========================================= */
+
+.admin-login-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.admin-login-link i {
+    font-size: 0.78rem;
+    transition: transform 0.3s ease;
+}
+
+.admin-login-link:hover i {
+    transform: rotate(-8deg) scale(1.1);
+}
+
+
+/* =========================================
+   ADMIN LOGIN MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .admin-login-link {
+        width: 100%;
+        justify-content: center;
+    }
+
+}
+
+<canvas id="plasmaCanvas"></canvas>
+/* =========================================================
+   🔥🔥 ASOMI PLASMA CURSOR — FINAL OVERRIDE
+   ========================================================= */
+
+/* Hide old cursor */
+#customCursor,
+#cursorSparkleContainer {
+    display: none !important;
+}
+
+/* Hide normal mouse pointer */
+html,
+body,
+body *,
+a,
+button,
+input,
+textarea,
+select,
+.service-card {
+    cursor: none !important;
+}
+
+
+/* =========================================================
+   PLASMA CANVAS
+   ========================================================= */
+
+#plasmaCanvas {
+    position: fixed !important;
+
+    inset: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    pointer-events: none !important;
+
+    z-index: 999998 !important;
+
+    display: block !important;
+
+    mix-blend-mode: screen;
+}
+
+
+/* =========================================================
+   PLASMA CURSOR CORE
+   ========================================================= */
+
+.plasma-cursor {
+    position: fixed !important;
+
+    left: 0;
+    top: 0;
+
+    width: 26px !important;
+    height: 26px !important;
+
+    pointer-events: none !important;
+
+    z-index: 999999 !important;
+
+    transform: translate3d(-50%, -50%, 0);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #eaffff 15%,
+            #6ff6ff 35%,
+            #258dff 60%,
+            transparent 75%
+        );
+
+    box-shadow:
+        0 0 8px #fff,
+        0 0 20px #5ff6ff,
+        0 0 40px #258dff,
+        0 0 80px rgba(70,80,255,.8);
+
+    pointer-events: none !important;
+
+    display: block !important;
+}
+
+
+/* =========================================================
+   PLASMA OUTER GLOW
+   ========================================================= */
+
+.plasma-glow {
+
+    position: absolute !important;
+
+    left: 50%;
+    top: 50%;
+
+    width: 110px;
+    height: 110px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.28) 0%,
+            rgba(65,225,255,.22) 25%,
+            rgba(45,90,255,.13) 50%,
+            transparent 72%
+        );
+
+    filter: blur(14px);
+
+    animation:
+        plasmaGlowPulse 1.2s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes plasmaGlowPulse {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(.75);
+
+        opacity: .55;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.75);
+
+        opacity: .55;
+    }
+
+}
+
+
+/* =========================================================
+   PLASMA PARTICLES
+   ========================================================= */
+
+.plasma-particle {
+
+    position: fixed;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 999997;
+
+    background: white;
+
+    box-shadow:
+        0 0 5px white,
+        0 0 12px #54eaff,
+        0 0 25px #2868ff;
+
+    animation:
+        plasmaParticleOut .8s ease-out forwards;
+
+    mix-blend-mode: screen;
+}
+
+
+@keyframes plasmaParticleOut {
+
+    from {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    to {
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--particle-x)),
+                calc(-50% + var(--particle-y))
+            )
+            scale(0);
+    }
+
+}
+
+
+/* =========================================================
+   CLICK BURST
+   ========================================================= */
+
+.plasma-burst {
+
+    position: fixed;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    border: 2px solid #62efff;
+
+    pointer-events: none;
+
+    z-index: 999996;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 25px #35dcff,
+        0 0 50px #315cff;
+
+    transform: translate(-50%, -50%);
+
+    animation:
+        plasmaBurstAnimation .7s ease-out forwards;
+}
+
+
+@keyframes plasmaBurstAnimation {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.2);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(8);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #plasmaCanvas,
+    .plasma-cursor,
+    .plasma-particle,
+    .plasma-burst {
+
+        display: none !important;
+    }
+
+    html,
+    body,
+    body * {
+        cursor: auto !important;
+    }
+
 }
