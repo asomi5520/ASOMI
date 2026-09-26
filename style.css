@@ -4186,3 +4186,285 @@ footer {
 </div>
 
 <canvas id="plasmaCanvas"></canvas>
+/* =========================================================
+   🔥🔥 ASOMI PLASMA CURSOR — FINAL OVERRIDE
+   ========================================================= */
+
+/* Hide old cursor */
+#customCursor,
+#cursorSparkleContainer {
+    display: none !important;
+}
+
+/* Hide normal mouse pointer */
+html,
+body,
+body *,
+a,
+button,
+input,
+textarea,
+select,
+.service-card {
+    cursor: none !important;
+}
+
+
+/* =========================================================
+   PLASMA CANVAS
+   ========================================================= */
+
+#plasmaCanvas {
+    position: fixed !important;
+
+    inset: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    pointer-events: none !important;
+
+    z-index: 999998 !important;
+
+    display: block !important;
+
+    mix-blend-mode: screen;
+}
+
+
+/* =========================================================
+   PLASMA CURSOR CORE
+   ========================================================= */
+
+.plasma-cursor {
+    position: fixed !important;
+
+    left: 0;
+    top: 0;
+
+    width: 26px !important;
+    height: 26px !important;
+
+    pointer-events: none !important;
+
+    z-index: 999999 !important;
+
+    transform: translate3d(-50%, -50%, 0);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #eaffff 15%,
+            #6ff6ff 35%,
+            #258dff 60%,
+            transparent 75%
+        );
+
+    box-shadow:
+        0 0 8px #fff,
+        0 0 20px #5ff6ff,
+        0 0 40px #258dff,
+        0 0 80px rgba(70,80,255,.8);
+
+    pointer-events: none !important;
+
+    display: block !important;
+}
+
+
+/* =========================================================
+   PLASMA OUTER GLOW
+   ========================================================= */
+
+.plasma-glow {
+
+    position: absolute !important;
+
+    left: 50%;
+    top: 50%;
+
+    width: 110px;
+    height: 110px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.28) 0%,
+            rgba(65,225,255,.22) 25%,
+            rgba(45,90,255,.13) 50%,
+            transparent 72%
+        );
+
+    filter: blur(14px);
+
+    animation:
+        plasmaGlowPulse 1.2s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes plasmaGlowPulse {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(.75);
+
+        opacity: .55;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(.75);
+
+        opacity: .55;
+    }
+
+}
+
+
+/* =========================================================
+   PLASMA PARTICLES
+   ========================================================= */
+
+.plasma-particle {
+
+    position: fixed;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 999997;
+
+    background: white;
+
+    box-shadow:
+        0 0 5px white,
+        0 0 12px #54eaff,
+        0 0 25px #2868ff;
+
+    animation:
+        plasmaParticleOut .8s ease-out forwards;
+
+    mix-blend-mode: screen;
+}
+
+
+@keyframes plasmaParticleOut {
+
+    from {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    to {
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--particle-x)),
+                calc(-50% + var(--particle-y))
+            )
+            scale(0);
+    }
+
+}
+
+
+/* =========================================================
+   CLICK BURST
+   ========================================================= */
+
+.plasma-burst {
+
+    position: fixed;
+
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    border: 2px solid #62efff;
+
+    pointer-events: none;
+
+    z-index: 999996;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 25px #35dcff,
+        0 0 50px #315cff;
+
+    transform: translate(-50%, -50%);
+
+    animation:
+        plasmaBurstAnimation .7s ease-out forwards;
+}
+
+
+@keyframes plasmaBurstAnimation {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.2);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(8);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #plasmaCanvas,
+    .plasma-cursor,
+    .plasma-particle,
+    .plasma-burst {
+
+        display: none !important;
+    }
+
+    html,
+    body,
+    body * {
+        cursor: auto !important;
+    }
+
+}
