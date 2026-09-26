@@ -2200,3 +2200,446 @@ console.log(
 console.log(
     "Hero 3D interaction enabled."
 );
+<script>
+
+/* =========================================================
+   🔥 ASOMI ENTERPRISE — PLASMA CURSOR ENGINE
+   ========================================================= */
+
+(function () {
+
+    const canvas = document.getElementById("plasmaCanvas");
+    const cursor = document.querySelector(".plasma-cursor");
+
+    if (!canvas || !cursor) {
+        console.error("PLASMA CURSOR: elements not found");
+        return;
+    }
+
+    const ctx = canvas.getContext("2d");
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+
+    let x = mouseX;
+    let y = mouseY;
+
+    let oldX = x;
+    let oldY = y;
+
+    const trail = [];
+
+    const TRAIL_LENGTH = 55;
+
+
+    /* =====================================================
+       CANVAS
+       ===================================================== */
+
+    function resize() {
+
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        canvas.width =
+            window.innerWidth * dpr;
+
+        canvas.height =
+            window.innerHeight * dpr;
+
+        canvas.style.width =
+            window.innerWidth + "px";
+
+        canvas.style.height =
+            window.innerHeight + "px";
+
+        ctx.setTransform(
+            dpr,
+            0,
+            0,
+            dpr,
+            0,
+            0
+        );
+    }
+
+    resize();
+
+    window.addEventListener("resize", resize);
+
+
+    /* =====================================================
+       MOUSE
+       ===================================================== */
+
+    window.addEventListener(
+        "mousemove",
+        function (e) {
+
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+        },
+        { passive: true }
+    );
+
+
+    /* =====================================================
+       PARTICLES
+       ===================================================== */
+
+    function particle(px, py) {
+
+        const p =
+            document.createElement("div");
+
+        p.className =
+            "plasma-particle";
+
+        p.style.left =
+            px + "px";
+
+        p.style.top =
+            py + "px";
+
+        const angle =
+            Math.random() * Math.PI * 2;
+
+        const distance =
+            15 + Math.random() * 45;
+
+        p.style.setProperty(
+            "--particle-x",
+            Math.cos(angle) * distance + "px"
+        );
+
+        p.style.setProperty(
+            "--particle-y",
+            Math.sin(angle) * distance + "px"
+        );
+
+        document.body.appendChild(p);
+
+        setTimeout(
+            () => p.remove(),
+            850
+        );
+    }
+
+
+    /* =====================================================
+       CLICK
+       ===================================================== */
+
+    window.addEventListener(
+        "mousedown",
+        function (e) {
+
+            const burst =
+                document.createElement("div");
+
+            burst.className =
+                "plasma-burst";
+
+            burst.style.left =
+                e.clientX + "px";
+
+            burst.style.top =
+                e.clientY + "px";
+
+            document.body.appendChild(burst);
+
+            setTimeout(
+                () => burst.remove(),
+                750
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       DRAW
+       ===================================================== */
+
+    function animate() {
+
+        requestAnimationFrame(animate);
+
+
+        /* Smooth mouse */
+
+        x +=
+            (mouseX - x) * 0.20;
+
+        y +=
+            (mouseY - y) * 0.20;
+
+
+        /* Cursor */
+
+        cursor.style.transform =
+            `translate3d(${x}px, ${y}px, 0)
+             translate(-50%, -50%)`;
+
+
+        /* Trail point */
+
+        trail.push({
+            x: x,
+            y: y,
+            time: performance.now()
+        });
+
+
+        if (trail.length > TRAIL_LENGTH) {
+            trail.shift();
+        }
+
+
+        ctx.clearRect(
+            0,
+            0,
+            window.innerWidth,
+            window.innerHeight
+        );
+
+
+        if (trail.length < 3) {
+            return;
+        }
+
+
+        /* =================================================
+           PLASMA RIBBON
+           ================================================= */
+
+        for (
+            let layer = 0;
+            layer < 4;
+            layer++
+        ) {
+
+            ctx.beginPath();
+
+            for (
+                let i = 0;
+                i < trail.length;
+                i++
+            ) {
+
+                const p =
+                    trail[i];
+
+                const progress =
+                    i / trail.length;
+
+                const wave =
+                    Math.sin(
+                        i * .42 +
+                        performance.now() * .004
+                    )
+                    *
+                    (
+                        3 +
+                        layer * 2
+                    );
+
+                const px =
+                    p.x + wave;
+
+                const py =
+                    p.y +
+                    Math.cos(
+                        i * .35 +
+                        performance.now() * .003
+                    )
+                    *
+                    (
+                        layer * 2
+                    );
+
+
+                if (i === 0) {
+
+                    ctx.moveTo(
+                        px,
+                        py
+                    );
+
+                } else {
+
+                    ctx.lineTo(
+                        px,
+                        py
+                    );
+
+                }
+
+            }
+
+
+            /* Gradient */
+
+            const gradient =
+                ctx.createLinearGradient(
+                    trail[0].x,
+                    trail[0].y,
+                    x,
+                    y
+                );
+
+
+            gradient.addColorStop(
+                0,
+                "rgba(45,30,255,0)"
+            );
+
+            gradient.addColorStop(
+                .20,
+                "rgba(75,40,255,.10)"
+            );
+
+            gradient.addColorStop(
+                .50,
+                "rgba(40,120,255,.35)"
+            );
+
+            gradient.addColorStop(
+                .75,
+                "rgba(50,220,255,.70)"
+            );
+
+            gradient.addColorStop(
+                1,
+                "rgba(255,255,255,.98)"
+            );
+
+
+            ctx.strokeStyle =
+                gradient;
+
+
+            ctx.lineWidth =
+                25 -
+                layer * 5;
+
+
+            ctx.lineCap =
+                "round";
+
+            ctx.lineJoin =
+                "round";
+
+
+            ctx.shadowBlur =
+                25 +
+                layer * 12;
+
+
+            ctx.shadowColor =
+                "rgba(35,150,255,.9)";
+
+
+            ctx.globalAlpha =
+                .20 +
+                layer * .18;
+
+
+            ctx.stroke();
+
+        }
+
+
+        /* =================================================
+           WHITE HOT CORE
+           ================================================= */
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            trail[0].x,
+            trail[0].y
+        );
+
+        for (
+            let i = 1;
+            i < trail.length;
+            i++
+        ) {
+
+            ctx.lineTo(
+                trail[i].x,
+                trail[i].y
+            );
+
+        }
+
+
+        ctx.strokeStyle =
+            "rgba(255,255,255,.75)";
+
+        ctx.lineWidth =
+            5;
+
+        ctx.shadowBlur =
+            20;
+
+        ctx.shadowColor =
+            "#ffffff";
+
+        ctx.globalAlpha =
+            .8;
+
+        ctx.stroke();
+
+
+        ctx.globalAlpha =
+            1;
+
+
+        /* =================================================
+           PARTICLES
+           ================================================= */
+
+        const dx =
+            x - oldX;
+
+        const dy =
+            y - oldY;
+
+        const speed =
+            Math.sqrt(
+                dx * dx +
+                dy * dy
+            );
+
+
+        if (
+            speed > 2 &&
+            Math.random() < .75
+        ) {
+
+            particle(
+                x,
+                y
+            );
+
+        }
+
+
+        oldX = x;
+        oldY = y;
+
+    }
+
+
+    animate();
+
+
+    console.log(
+        "🔥 ASOMI PLASMA CURSOR ACTIVE"
+    );
+
+})();
+
+</script>
