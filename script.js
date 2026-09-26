@@ -2643,3 +2643,24 @@ console.log(
 })();
 
 </script>
+/* =========================================================
+   ASOMI INTRO — FORCE EXIT FIX
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const intro = document.getElementById("asomi-intro");
+
+    if (!intro) return;
+
+    console.log("ASOMI INTRO FOUND");
+
+    setTimeout(() => {
+
+        intro.classList.add("asomi-intro-hide");
+
+        console.log("ASOMI INTRO HIDDEN");
+
+    }, 6500);
+
+});
