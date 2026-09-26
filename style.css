@@ -4462,3 +4462,76 @@ select,
     }
 
 }
+/* =========================================================
+   🔥 PLASMA CURSOR — VISIBILITY FIX
+========================================================= */
+
+#customCursor {
+    display: none !important;
+}
+
+.plasma-cursor {
+    display: block !important;
+
+    position: fixed !important;
+
+    width: 28px !important;
+    height: 28px !important;
+
+    left: 0 !important;
+    top: 0 !important;
+
+    z-index: 2147483647 !important;
+
+    pointer-events: none !important;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        #ffffff 0%,
+        #8fffff 25%,
+        #20aaff 55%,
+        transparent 75%
+    );
+
+    box-shadow:
+        0 0 10px #ffffff,
+        0 0 25px #35ddff,
+        0 0 55px #246cff,
+        0 0 90px rgba(50,80,255,.8);
+}
+
+.plasma-glow {
+    display: block !important;
+}
+
+#plasmaCanvas {
+    display: block !important;
+
+    position: fixed !important;
+
+    inset: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    pointer-events: none !important;
+
+    z-index: 2147483646 !important;
+}
+
+@media (max-width: 768px) {
+
+    html,
+    body,
+    body * {
+        cursor: auto !important;
+    }
+
+    .plasma-cursor,
+    #plasmaCanvas {
+        display: none !important;
+    }
+
+}
